@@ -36,7 +36,7 @@ def test_update_account(testing_client):
     WHEN the '/accounts/<int:id>' page is updated (PUT)
     THEN check the response is valid
     """
-    response = testing_client.put('/accounts/1', json={'name': 'John Doe', 'currency': '€'})
+    response = testing_client.put('/accounts', json={'name': 'John Doe', 'currency': '€'})
     assert response.status_code == 200
 
 def test_delete_account(testing_client):
@@ -45,5 +45,5 @@ def test_delete_account(testing_client):
     WHEN the '/accounts/<int:id>' page is deleted (DELETE)
     THEN check the response is valid
     """
-    response = testing_client.delete('/accounts/1')
+    response = testing_client.delete('/accounts')
     assert response.status_code == 200
