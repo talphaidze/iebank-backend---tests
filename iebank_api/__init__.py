@@ -7,3 +7,7 @@ db = SQLAlchemy(app)
 
 from iebank_api.models import Account
 from iebank_api import routes
+
+class GithubCIConfig(Config):
+  SQLALCHEMY_DATABASE_URI= 'sqlite:///test.db'
+  DEBUG = True
